@@ -1,0 +1,7 @@
+A simulação ARM foi realizada utilizando a plataforma Raspberry Pi Pico, baseada em arquitetura ARM.
+
+O objetivo da simulação foi demonstrar o funcionamento de um algoritmo embarcado responsável pelo acionamento automatizado de hardware em tempo real.
+
+Durante a execução do programa, o processador realiza continuamente a inicialização dos GPIOs, execução do algoritmo, acionamento do LED e repetição do fluxo de processamento.
+
+A simulação permitiu compreender conceitos introdutórios relacionados à arquitetura ARM, controle de hardware e processamento embarcado.
