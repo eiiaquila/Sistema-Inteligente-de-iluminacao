@@ -1,91 +1,101 @@
-# Sistema Inteligente de Monitoramento Residencial com Arduino e Arquitetura ARM
+# Sistema Inteligente de Iluminacao com Arduino e Arquitetura ARM
 
-Projeto acadêmico desenvolvido para a disciplina de Programação de Microprocessadores e Microcontroladores.
+Projeto academico desenvolvido para a disciplina de Programacao de Microprocessadores e Microcontroladores.
 
 ---
 
-# 📖 Sobre o Projeto
+## 📖 Sobre o Projeto
 
-O projeto consiste no desenvolvimento de um sistema embarcado inteligente capaz de realizar monitoramento residencial automatizado utilizando sensores, Arduino e conceitos introdutórios de arquitetura ARM.
+O projeto consiste no desenvolvimento de um sistema embarcado inteligente capaz de realizar o controle automatizado de iluminacao residencial utilizando sensores, Arduino e conceitos introdutorios de Inteligencia Artificial e arquitetura ARM.
 
-O sistema realiza a leitura contínua da luminosidade do ambiente e da presença de movimento, executando tomadas de decisão automatizadas em tempo real.
+O sistema realiza a leitura continua da luminosidade do ambiente e da presenca de pessoas, classificando o ambiente em **10 situacoes distintas** e executando tomadas de decisao automatizadas em tempo real.
 
-Quando o ambiente está escuro e há detecção de movimento, o sistema ativa um alerta visual e sonoro, simulando um mecanismo inteligente de segurança residencial noturna.
+Quando o ambiente esta escuro e ha deteccao de presenca, o sistema aciona automaticamente a iluminacao artificial e o alerta sonoro com frequencias proporcionais ao nivel de criticidade detectado, simulando um sistema inteligente de eficiencia energetica residencial.
 
-📄 [Acessar Artigo Acadêmico em PDF](artigo/artigo-monitoramento-residencial-arduino.pdf)
 ---
 
-# 🎯 Objetivos
+## 📄 Acessar Artigo Academico em PDF
+
+---
+
+## 🎯 Objetivos
 
 - Desenvolver algoritmos embarcados em linguagem C/C++;
-- Aplicar conceitos de automação residencial;
-- Utilizar sensores e atuadores em Arduino;
-- Simular sistemas embarcados virtualmente;
-- Implementar lógica de tomada de decisão automatizada;
-- Estudar conceitos introdutórios de arquitetura ARM;
-- Desenvolver um sistema de monitoramento inteligente de baixo custo.
+- Aplicar conceitos introdutorios de Inteligencia Artificial em sistemas embarcados;
+- Implementar logica de tomada de decisao com 10 situacoes distintas;
+- Utilizar sensores LDR e PIR integrados ao Arduino;
+- Simular sistemas embarcados virtualmente na plataforma Wokwi;
+- Estudar conceitos introdutorios de arquitetura ARM com Raspberry Pi Pico;
+- Desenvolver um sistema de iluminacao inteligente de baixo custo;
+- Organizar o projeto utilizando GitHub como ferramenta de versionamento.
 
 ---
 
-# ⚙️ Funcionalidades
+## ⚙️ Funcionalidades
 
-✅ Monitoramento de luminosidade  
-✅ Detecção de movimento  
-✅ Acionamento automático de LED  
-✅ Alerta sonoro com buzzer  
-✅ Interface serial de monitoramento  
-✅ Tomada de decisão automatizada  
-✅ Simulação virtual do circuito  
-
----
-
-# 🧠 Lógica do Sistema
-
-O sistema executa a seguinte lógica:
-
-- Ambiente escuro + movimento detectado:
-  - LED é acionado;
-  - buzzer emite alerta sonoro;
-  - mensagem de alerta é exibida no monitor serial.
-
-- Ambiente iluminado + movimento:
-  - sistema apenas registra a movimentação no monitor serial.
-
-- Sem movimento:
-  - sistema permanece em estado seguro.
+- ✅ Monitoramento continuo de luminosidade
+- ✅ Deteccao de presenca e movimento
+- ✅ Acionamento automatico de LED
+- ✅ Alerta sonoro com frequencias distintas por nivel de criticidade
+- ✅ Classificacao do ambiente em 10 situacoes distintas
+- ✅ Interface serial de monitoramento em tempo real
+- ✅ Tomada de decisao automatizada com logica inteligente
+- ✅ Simulacao virtual do circuito no Wokwi
+- ✅ Simulacao complementar em arquitetura ARM
 
 ---
 
-# 🛠️ Tecnologias Utilizadas
+## 🧠 Logica do Sistema — 10 Situacoes
+
+O sistema executa a seguinte logica de decisao inteligente:
+
+| Situacao | Luminosidade | Presenca | Acao |
+|---|---|---|---|
+| ALERTA MAXIMO | < 200 | Sim | LED ON + Buzzer 1500 Hz |
+| ALERTA: Muito escuro | 200 a 399 | Sim | LED ON + Buzzer 1000 Hz |
+| Escuro com presenca | 400 a 599 | Sim | LED ON + Buzzer 800 Hz |
+| Luz natural parcial | 600 a 799 | Sim | LED OFF, sem buzzer |
+| Totalmente iluminado | >= 800 | Sim | LED OFF, sem buzzer |
+| Escuridao total. Standby | < 200 | Nao | LED OFF, sem buzzer |
+| Muito escuro. Standby | 200 a 399 | Nao | LED OFF, sem buzzer |
+| Escuro sem presenca | 400 a 599 | Nao | LED OFF, sem buzzer |
+| Luz parcial. Em espera | 600 a 799 | Nao | LED OFF, sem buzzer |
+| Repouso total | >= 800 | Nao | LED OFF, sem buzzer |
+
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 - Arduino UNO
 - Linguagem C/C++
 - Wokwi Simulator
 - GitHub
-- Conceitos introdutórios de Arquitetura ARM
+- Raspberry Pi Pico (Arquitetura ARM Cortex-M0+)
+- Conceitos introdutorios de Inteligencia Artificial
 
 ---
 
-# 🔌 Componentes Utilizados
+## 🔌 Componentes Utilizados
 
-| Componente | Função |
-|---|---|
-| Arduino UNO | Controle principal |
-| Sensor LDR | Leitura de luminosidade |
-| Sensor PIR | Detecção de movimento |
-| LED | Alerta visual |
-| Buzzer | Alerta sonoro |
+| Componente | Funcao | Conexao |
+|---|---|---|
+| Arduino UNO | Controle principal do sistema | — |
+| Sensor LDR | Leitura de luminosidade | Pino A0 |
+| Sensor PIR | Deteccao de presenca | Pino 2 |
+| LED + resistor 220 Ohm | Iluminacao artificial | Pino 9 |
+| Buzzer | Alerta sonoro | Pino 8 |
 
 ---
 
-# 📷 Estrutura do Projeto
+## 📷 Estrutura do Projeto
 
-```txt
+```
 /projeto
 │
 ├── codigo/
 ├── imagens/
-├── artigo/
+├── documentacao/
+├── diagramas/
 ├── video/
 ├── simulacao-arm/
 └── README.md
@@ -93,272 +103,296 @@ O sistema executa a seguinte lógica:
 
 ---
 
-# 🖼️ Imagens do Projeto
+## 🖼️ Imagens do Projeto
 
-## 🔧 Estrutura Geral do Circuito
-
+### 🔧 Estrutura Geral do Circuito
 Imagem completa do sistema embarcado desenvolvido no simulador Wokwi.
 
-![Arduino Completo](imagens/Arduino.PNG)
+![Circuito Completo]()
 
 ---
 
-# 📡 Sensores e Atuadores
+### 📡 Sensores e Atuadores
 
-## Sensor LDR — Monitoramento de Luminosidade
+**Sensor LDR — Monitoramento de Luminosidade**
+Responsavel pela leitura da intensidade luminosa do ambiente.
 
-Responsável pela leitura da intensidade luminosa do ambiente.
+![Sensor LDR]()
 
-![Sensor LDR](imagens/Sensor_LDR.PNG)
+**Sensor PIR — Deteccao de Presenca**
+Responsavel pela identificacao de presenca e movimentacao no ambiente.
 
----
+![Sensor PIR]()
 
-## Sensor PIR — Detecção de Movimento
+**LED — Iluminacao Artificial**
+Acionado automaticamente quando ha presenca em ambiente escuro.
 
-Responsável pela identificação de presença e movimentação.
+![LED]()
 
-![Sensor PIR](imagens/Sensor_PIR.PNG)
+**Buzzer — Alerta Sonoro**
+Emite frequencias distintas conforme o nivel de criticidade do ambiente.
 
----
-
-## Buzzer — Alerta Sonoro
-
-Utilizado para emissão de alerta sonoro em situações de monitoramento noturno.
-
-![Buzzer](imagens/Sensor_buzzer.PNG)
+![Buzzer]()
 
 ---
 
-# 💻 Código-Fonte do Sistema
+## 💻 Codigo-Fonte do Sistema
 
-## Estrutura Principal do Algoritmo
+### Estrutura Principal do Algoritmo
 
-![Código Parte 1](imagens/Codigo_parte1.PNG)
+![Codigo Parte 1]()
 
----
+### Logica de Tomada de Decisao
 
-## Lógica de Tomada de Decisão
-
-![Código Parte 2](imagens/Codigo_parte2.PNG)
+![Codigo Parte 2]()
 
 ---
 
-# 🧪 Demonstração de Funcionamento
+## 🧪 Demonstracao de Funcionamento
 
-## Ambiente Iluminado com Movimento
+### ALERTA MAXIMO — Escuridao total com presenca
+Ambiente com luminosidade abaixo de 200 e presenca detectada. LED acende e buzzer emite 1500 Hz.
 
-O sistema identifica movimentação, porém não ativa alerta sonoro devido à luminosidade do ambiente.
+![Alerta Maximo]()
 
-![Ambiente Iluminado](imagens/Captura_ambiente_iluminado.PNG)
+### Escuro com presenca — Iluminacao ativada
+Luminosidade entre 400 e 599 com presenca detectada. LED acende e buzzer emite 800 Hz.
 
----
+![Escuro com Presenca]()
 
-## Movimento Detectado em Ambiente Escuro
+### Luz natural parcial com presenca
+Luminosidade entre 600 e 799 com presenca detectada. Sistema mantem LED apagado.
 
-Quando há baixa luminosidade e movimentação, o sistema ativa os mecanismos de alerta automaticamente.
+![Luz Parcial]()
 
-![Movimento no Escuro](imagens/Captura_movimento_escuro.PNG)
+### Sistema em Repouso total
+Ambiente totalmente iluminado sem presenca detectada. Todos os atuadores desligados.
 
----
-
-## Sistema em Estado Seguro
-
-Situação em que não há movimentação detectada pelo sensor PIR.
-
-![Sem Movimento](imagens/Captura_sem_movimento.PNG)
+![Repouso Total]()
 
 ---
 
-## LED e Buzzer Ativados
-
-Demonstração visual do acionamento automático dos atuadores do sistema.
-
-![LED e Buzzer](imagens/Led_Buzzer_Ativado.PNG)
-
----
-
-# 💻 Código Principal
+## 💻 Codigo Principal
 
 ```cpp
-int ldr = A0;
-int pir = 2;
-int led = 13;
-int buzzer = 8;
+// Sistema Inteligente de Iluminacao
+// Autor: [Seu Nome]
+// Disciplina: Programacao de Microprocessadores e Microcontroladores
+
+int ldr = A0;      // Sensor de luminosidade
+int pir = 2;       // Sensor de presenca
+int led = 9;       // LED de iluminacao
+int buzzer = 8;    // Buzzer de alerta
 
 void setup() {
-
   pinMode(pir, INPUT);
   pinMode(led, OUTPUT);
-
+  pinMode(buzzer, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-
-  int luz = 1023 - analogRead(ldr);
-
+  int luz = analogRead(ldr);
   int movimento = digitalRead(pir);
 
-  Serial.print("Luminosidade: ");
-  Serial.println(luz);
-
-  Serial.print("Movimento: ");
+  // Exibe valores dos sensores no Serial Monitor
+  Serial.print("Luz: ");
+  Serial.print(luz);
+  Serial.print(" | Movimento: ");
   Serial.println(movimento);
 
-  if (luz < 500 && movimento == HIGH) {
-
+  // Algoritmo de tomada de decisao inteligente — 10 situacoes
+  if (luz < 200 && movimento == HIGH) {
     digitalWrite(led, HIGH);
-
+    tone(buzzer, 1500);
+    Serial.println("ALERTA MAXIMO: Escuridao total com presenca!");
+  }
+  else if (luz >= 200 && luz < 400 && movimento == HIGH) {
+    digitalWrite(led, HIGH);
     tone(buzzer, 1000);
-
-    Serial.println("ALERTA: Movimento detectado no escuro!");
-
-  } 
-  else if (luz >= 500 && movimento == HIGH) {
-
+    Serial.println("ALERTA: Ambiente muito escuro com presenca!");
+  }
+  else if (luz >= 400 && luz < 600 && movimento == HIGH) {
+    digitalWrite(led, HIGH);
+    tone(buzzer, 800);
+    Serial.println("Escuro com presenca. Iluminacao ativada.");
+  }
+  else if (luz >= 600 && luz < 800 && movimento == HIGH) {
     digitalWrite(led, LOW);
-
     noTone(buzzer);
-
-    Serial.println("Movimento detectado em ambiente iluminado.");
-
-  } 
+    Serial.println("Luz natural parcial. Presenca detectada.");
+  }
+  else if (luz >= 800 && movimento == HIGH) {
+    digitalWrite(led, LOW);
+    noTone(buzzer);
+    Serial.println("Ambiente totalmente iluminado. Presenca detectada.");
+  }
+  else if (luz < 200 && movimento == LOW) {
+    digitalWrite(led, LOW);
+    noTone(buzzer);
+    Serial.println("Escuridao total. Nenhuma presenca. Standby.");
+  }
+  else if (luz >= 200 && luz < 400 && movimento == LOW) {
+    digitalWrite(led, LOW);
+    noTone(buzzer);
+    Serial.println("Muito escuro. Sem presenca. Standby.");
+  }
+  else if (luz >= 400 && luz < 600 && movimento == LOW) {
+    digitalWrite(led, LOW);
+    noTone(buzzer);
+    Serial.println("Escuro sem presenca. Standby.");
+  }
+  else if (luz >= 600 && luz < 800 && movimento == LOW) {
+    digitalWrite(led, LOW);
+    noTone(buzzer);
+    Serial.println("Luz natural parcial. Sem presenca. Em espera.");
+  }
   else {
-
     digitalWrite(led, LOW);
-
     noTone(buzzer);
-
-    Serial.println("Ambiente seguro.");
+    Serial.println("Ambiente totalmente iluminado. Repouso total.");
   }
 
-  delay(1000);
+  delay(1000); // Ciclo de leitura a cada 1 segundo
 }
+```
+
+---
+
+## 🔄 Diagrama Simplificado do Sistema
 
 ```
-# 🔄 Diagrama Simplificado do Sistema
-
-LDR → Arduino → LED  
-PIR → Arduino → Buzzer
-
----
-
-# 🧪 Simulação
-
-O projeto foi desenvolvido virtualmente utilizando o simulador Wokwi, permitindo a integração de sensores e atuadores sem necessidade de hardware físico.
+LDR  → Arduino (A0) → Algoritmo de decisao → LED    (pino 9)
+PIR  → Arduino (2)  → Algoritmo de decisao → Buzzer (pino 8)
+```
 
 ---
 
-# 🖥️ Simulação ARM
+## 🧪 Simulacao
 
-Além do sistema principal desenvolvido em Arduino UNO, foi realizada uma simulação complementar utilizando Raspberry Pi Pico, plataforma baseada em arquitetura ARM.
-
-A simulação teve como objetivo demonstrar conceitos introdutórios de processamento embarcado, controle de GPIO e execução contínua de algoritmos em sistemas embarcados modernos.
+O projeto foi desenvolvido virtualmente utilizando o simulador **Wokwi**, permitindo a integracao de sensores e atuadores sem necessidade de hardware fisico.
 
 ---
 
-## 🔄 Fluxo de Execução do Algoritmo ARM
+## 🖥️ Simulacao ARM
+
+Alem do sistema principal desenvolvido em Arduino UNO, foi realizada uma simulacao complementar utilizando **Raspberry Pi Pico**, plataforma baseada em arquitetura **ARM Cortex-M0+**.
+
+A simulacao teve como objetivo demonstrar o funcionamento de um algoritmo embarcado responsavel pelo controle automatizado de iluminacao em tempo real, aplicando conceitos introdutorios de sistemas inteligentes em uma arquitetura de processamento moderna.
+
+### 🔄 Fluxo de Execucao do Algoritmo ARM
 
 O processador executa continuamente o seguinte fluxo:
 
-```txt
-Inicialização do sistema
+```
+Inicializacao do sistema
         ↓
-Configuração do GPIO
+Configuracao do GPIO
         ↓
-Acionamento do LED
+Leitura dos sensores (LDR e PIR)
         ↓
-Temporização
+Classificacao do ambiente (10 situacoes)
         ↓
-Desligamento do LED
+Acionamento dos atuadores (LED e Buzzer)
         ↓
-Repetição contínua do algoritmo
+Temporizacao (1 segundo)
+        ↓
+Repeticao continua do algoritmo
 ```
 
----
+### 🧩 Codigo da Simulacao ARM
 
-## 🧩 Código da Simulação ARM
-
-```cpp
+```c
+// Simulacao ARM — Raspberry Pi Pico
 #include "pico/stdlib.h"
 
 int main() {
 
-    const uint LED = 25;
+    const uint LED = 25;  // LED onboard do Pico
 
     gpio_init(LED);
     gpio_set_dir(LED, GPIO_OUT);
 
     while (true) {
 
-        gpio_put(LED, 1);
-        sleep_ms(1000);
+        gpio_put(LED, 1);   // Liga o LED (simula iluminacao ativa)
+        sleep_ms(2000);     // Aguarda 2 segundos
 
-        gpio_put(LED, 0);
-        sleep_ms(1000);
+        gpio_put(LED, 0);   // Desliga o LED (simula standby)
+        sleep_ms(1000);     // Aguarda 1 segundo
     }
 }
 ```
 
----
+### 📷 Simulacao Raspberry Pi Pico
 
-## 📷 Simulação Raspberry Pi Pico
+**Estrutura da Plataforma ARM**
 
-### Estrutura da Plataforma ARM
+![Circuito ARM]()
 
-![Circuito ARM](simulacao-arm/arm-circuito.PNG)
+**Codigo Executado na Arquitetura ARM**
 
----
+![Codigo ARM]()
 
-### Código Executado na Arquitetura ARM
+**Execucao do Algoritmo Embarcado**
 
-![Código ARM](simulacao-arm/arm-codigo.PNG)
-
----
-
-### Execução do Algoritmo Embarcado
-
-![LED ARM](simulacao-arm/arm-led.PNG)
+![LED ARM]()
 
 ---
 
-# 🧱 Conceitos de Arquitetura ARM
+## 🧱 Conceitos de Arquitetura ARM
 
-Durante o desenvolvimento do projeto foram estudados conceitos introdutórios de arquitetura ARM, amplamente utilizada em sistemas embarcados modernos devido à sua eficiência energética e capacidade de processamento em tempo real.
+Durante o desenvolvimento do projeto foram estudados conceitos introdutorios de arquitetura ARM, amplamente utilizada em sistemas embarcados modernos devido a sua eficiencia energetica e capacidade de processamento em tempo real.
 
-A arquitetura ARM foi utilizada como base conceitual para compreensão do funcionamento de sistemas embarcados inteligentes.
-
----
-
-# 📊 Resultados Obtidos
-
-O sistema apresentou funcionamento satisfatório durante os testes realizados no ambiente de simulação.
-
-Os sensores responderam corretamente às alterações de luminosidade e presença, realizando acionamentos automáticos conforme as condições programadas.
-
-O projeto demonstrou a aplicação prática de:
-- programação embarcada;
-- automação residencial;
-- integração de sensores;
-- lógica inteligente;
-- monitoramento em tempo real.
+A simulacao em Raspberry Pi Pico permitiu compreender controle de GPIO, execucao continua de algoritmos embarcados e processamento em tempo real aplicado ao controle de iluminacao inteligente.
 
 ---
 
-# 🎥 Demonstração
+## 📊 Resultados Obtidos
 
-Adicionar vídeo demonstrando o funcionamento do sistema.
+O sistema apresentou funcionamento satisfatorio durante os testes realizados no ambiente de simulacao Wokwi.
+
+Os sensores responderam corretamente as alteracoes de luminosidade e presenca, realizando acionamentos automaticos conforme as 10 situacoes programadas no algoritmo.
+
+O projeto demonstrou a aplicacao pratica de:
+
+- programacao embarcada em C/C++;
+- algoritmo de tomada de decisao com IA introdutoria;
+- automacao de iluminacao residencial;
+- integracao de multiplos sensores;
+- eficiencia energetica — LED so acende quando necessario;
+- monitoramento em tempo real via Serial Monitor.
 
 ---
 
-# 🔗 Simulação Online
+## 🎥 Demonstracao
 
-https://wokwi.com/projects/464364096321736705
+Adicionar video demonstrando o funcionamento do sistema.
 
 ---
 
-# 👨‍💻 Autor
+## 🔗 Simulacao Online
 
-Kauã Fernandez
+[Acessar projeto no Wokwi]()
 
-Projeto desenvolvido para fins acadêmicos.
+---
+
+## 📋 Como Executar
+
+1. Acesse [wokwi.com](https://wokwi.com)
+2. Crie um novo projeto **Arduino UNO**
+3. Importe o arquivo `diagramas/diagram.json`
+4. Cole o codigo de `codigo/sketch.ino`
+5. Clique em **Start Simulation**
+6. Abra o **Serial Monitor**
+7. Clique no **LDR** e ajuste o slider para simular luminosidade
+8. Clique no **PIR** para simular presenca
+9. Observe as mensagens no Serial Monitor e o comportamento do LED e buzzer
+
+---
+
+## 👨‍💻 Autor
+
+**[Seu Nome]**
+
+Projeto desenvolvido para fins academicos.
