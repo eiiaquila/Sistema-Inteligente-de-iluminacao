@@ -93,82 +93,12 @@ O sistema executa a seguinte logica de decisao inteligente:
 /projeto
 │
 ├── codigo/
-├── imagens/
 ├── documentacao/
 ├── diagramas/
 ├── video/
 ├── simulacao-arm/
 └── README.md
 ```
-
----
-
-## 🖼️ Imagens do Projeto
-
-### 🔧 Estrutura Geral do Circuito
-Imagem completa do sistema embarcado desenvolvido no simulador Wokwi.
-
-![Circuito Completo]()
-
----
-
-### 📡 Sensores e Atuadores
-
-**Sensor LDR — Monitoramento de Luminosidade**
-Responsavel pela leitura da intensidade luminosa do ambiente.
-
-![Sensor LDR]()
-
-**Sensor PIR — Deteccao de Presenca**
-Responsavel pela identificacao de presenca e movimentacao no ambiente.
-
-![Sensor PIR]()
-
-**LED — Iluminacao Artificial**
-Acionado automaticamente quando ha presenca em ambiente escuro.
-
-![LED]()
-
-**Buzzer — Alerta Sonoro**
-Emite frequencias distintas conforme o nivel de criticidade do ambiente.
-
-![Buzzer]()
-
----
-
-## 💻 Codigo-Fonte do Sistema
-
-### Estrutura Principal do Algoritmo
-
-![Codigo Parte 1]()
-
-### Logica de Tomada de Decisao
-
-![Codigo Parte 2]()
-
----
-
-## 🧪 Demonstracao de Funcionamento
-
-### ALERTA MAXIMO — Escuridao total com presenca
-Ambiente com luminosidade abaixo de 200 e presenca detectada. LED acende e buzzer emite 1500 Hz.
-
-![Alerta Maximo]()
-
-### Escuro com presenca — Iluminacao ativada
-Luminosidade entre 400 e 599 com presenca detectada. LED acende e buzzer emite 800 Hz.
-
-![Escuro com Presenca]()
-
-### Luz natural parcial com presenca
-Luminosidade entre 600 e 799 com presenca detectada. Sistema mantem LED apagado.
-
-![Luz Parcial]()
-
-### Sistema em Repouso total
-Ambiente totalmente iluminado sem presenca detectada. Todos os atuadores desligados.
-
-![Repouso Total]()
 
 ---
 
@@ -274,15 +204,13 @@ O projeto foi desenvolvido virtualmente utilizando o simulador **Wokwi**, permit
 
 ---
 
-## 🖥️ Simulacao ARM
+## 🖥️ Simulacao ARM — Raspberry Pi Pico
 
 Alem do sistema principal desenvolvido em Arduino UNO, foi realizada uma simulacao complementar utilizando **Raspberry Pi Pico**, plataforma baseada em arquitetura **ARM Cortex-M0+**.
 
 A simulacao teve como objetivo demonstrar o funcionamento de um algoritmo embarcado responsavel pelo controle automatizado de iluminacao em tempo real, aplicando conceitos introdutorios de sistemas inteligentes em uma arquitetura de processamento moderna.
 
 ### 🔄 Fluxo de Execucao do Algoritmo ARM
-
-O processador executa continuamente o seguinte fluxo:
 
 ```
 Inicializacao do sistema
@@ -324,20 +252,6 @@ int main() {
 }
 ```
 
-### 📷 Simulacao Raspberry Pi Pico
-
-**Estrutura da Plataforma ARM**
-
-![Circuito ARM]()
-
-**Codigo Executado na Arquitetura ARM**
-
-![Codigo ARM]()
-
-**Execucao do Algoritmo Embarcado**
-
-![LED ARM]()
-
 ---
 
 ## 🧱 Conceitos de Arquitetura ARM
@@ -371,28 +285,26 @@ Adicionar video demonstrando o funcionamento do sistema.
 
 ---
 
-## 🔗 Simulacao Online
+## 🔗 Simulacoes Online
 
-[Acessar projeto no Wokwi]()
+| Projeto | Link |
+|---|---|
+| Arduino UNO — Sistema de Iluminacao | [Acessar no Wokwi](https://wokwi.com/projects/464773254683308033) |
+| Raspberry Pi Pico — Simulacao ARM | [Acessar no Wokwi](https://wokwi.com/projects/465014164719091713) |
 
 ---
 
 ## 📋 Como Executar
 
-1. Acesse [wokwi.com](https://wokwi.com)
-2. Crie um novo projeto **Arduino UNO**
-3. Importe o arquivo `diagramas/diagram.json`
-4. Cole o codigo de `codigo/sketch.ino`
-5. Clique em **Start Simulation**
-6. Abra o **Serial Monitor**
-7. Clique no **LDR** e ajuste o slider para simular luminosidade
-8. Clique no **PIR** para simular presenca
-9. Observe as mensagens no Serial Monitor e o comportamento do LED e buzzer
+1. Acesse o link da simulacao Arduino acima
+2. Clique em **Start Simulation**
+3. Abra o **Serial Monitor**
+4. Clique no **LDR** e ajuste o slider para simular luminosidade
+5. Clique no **PIR** para simular presenca
+6. Observe as mensagens no Serial Monitor e o comportamento do LED e buzzer
 
 ---
 
 ## 👨‍💻 Autor
 
-**[Seu Nome]**
-
-Projeto desenvolvido para fins academicos.
+Áquila Rebeca
